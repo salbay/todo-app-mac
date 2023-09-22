@@ -18,6 +18,14 @@ def write_todos(todos_arg, filepath=FILEPATH):
     with open(filepath,"w") as file:
         file.writelines(todos_arg)
 
+def delete_todos(delete_item):
+    file = get_todos()
+    for item in file:
+        if item == delete_item:
+            print(delete_item,9)
+            file.remove(delete_item)
+    write_todos(file)
+
 if __name__ == "__main__":
     print(__name__)
     get_todos()
