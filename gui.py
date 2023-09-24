@@ -7,7 +7,9 @@ sg.theme("DarkBlue")
 label_clock = sg.Text("",key="clock")
 label1 = sg.Text("Type in a to-do")
 inp_box1 = sg.InputText(tooltip="Enter todo",key="todo")
-button_add = sg.Button("Add",size=10)
+button_add = sg.Button(size=2,image_source="add.png",
+                       mouseover_colors="LightBlue2",
+                       tooltip="Add Todo",key="Add")
 button_exit = sg.Button("Exit")
 button_delete = sg.Button("Delete")
 list_box = sg.Listbox(values = functions.get_todos(), key = "todos",
@@ -35,7 +37,6 @@ while True:
                 inp_box1=values["todos"]
                 todo_to_edit = values["todos"][0]
                 edited_todo = values["todo"]
-
                 todos = functions.get_todos()
                 index = todos.index(todo_to_edit)
                 todos[index] = edited_todo+"\n"
